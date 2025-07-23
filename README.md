@@ -13,4 +13,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Desktop Screenshot
 
-![Desktop Screenshot](./notes-app\src\DesktopScreenshot.png)
+![Desktop Screenshot])(C:\Users\kizil\Desktop\notes-app\src\DesktopScreenshot.png)
