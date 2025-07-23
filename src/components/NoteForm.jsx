@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-const NoteForm = () => {
+const NoteForm = ({ notes, setNotes }) => {
   const [formData, setFormData] = useState({
     title: '',
     priority: 'Medium',
     category: 'Work',
-    content: '',
+    description: '',
   });
 
   const handleChange = (e) => {
@@ -14,8 +14,33 @@ const NoteForm = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //Validation
+    if (!formData.title || !formData.description) {
+      return;
+    }
+
+    //Create note object
+    const newNote = {
+      id: Date.now(),
+      ...formData,
+    };
+
+    //Add notes to state
+    setNotes([newNote, ...notes]);
+
+    //Reset form data
+    setFormData({
+      title: '',
+      priority: 'Medium',
+      category: 'Work',
+      description: '',
+    });
+  };
   return (
-    <form className='mb-6'>
+    <form onSubmit={handleSubmit} className='mb-6'>
       <div className='mb-4'>
         <label htmlFor='title' className='block font-semibold'>
           Title
@@ -71,7 +96,7 @@ const NoteForm = () => {
           onChange={handleChange}></textarea>
       </div>
       <button className='w-full bg-purple-500 text-white py-2 rounded-lg cursor-pointer hover:bg-purple-600'>
-        Note
+        Add Note
       </button>
     </form>
   );
