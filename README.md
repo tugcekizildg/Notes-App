@@ -13,4 +13,8 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Desktop Screenshot
 
+<<<<<<< HEAD
 ![Desktop Screenshot](./notes-app/src/DesktopScreenshot.png)
+=======
+![Desktop Screenshot])(./notes-app/src/DesktopScreenshot.png)
+>>>>>>> b0709b6dadf475649b7c830656e0e36fbd67b82f
